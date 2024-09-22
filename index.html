@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Discount</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #9b96ec;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgb(193, 158, 238);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(75, 42, 42, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #9c81be;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #141942;
+            color: rgb(240, 232, 232);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #060a5f;
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Cafe Discount</h2>
+        <label for="age">Enter your age:</label>
+        <input type="number" id="age" value="0">
+        <button onclick="checkDiscount()">Check Discount</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function checkDiscount() {
+            // Get age input
+            let age = document.getElementById('age').value;
+
+            // Default age is set to 0 if the input is empty
+            age = age ? parseInt(age) : 0;
+
+            // Get the result div
+            let result = document.getElementById('result');
+
+            // Determine discount based on age
+            if (age >= 65) {
+                result.innerHTML = "You get a 10% discount!";
+            } else if (age >= 18 && age <= 25) {
+                result.innerHTML = "You get a 5% discount!";
+            } else {
+                result.innerHTML = "No discount";
+            }
+        }
+    </script>
+
+</body>
+</html>
